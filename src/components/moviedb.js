@@ -1,7 +1,14 @@
 const h = require('react-hyperscript')
-const { Link } = require('react-router')
+const {
+  Link
+} = require('react-router')
 
-module.exports = props => h('div', [
+const Moviedb = props => h('div', [
   h('h1', 'Movies'),
-  h(Link, { to: '/', className: 'link'}, 'Home')
+  h(Link, {
+    to: '/',
+    className: 'link'
+  }, 'Home')
 ])
+
+module.exports = Moviedb

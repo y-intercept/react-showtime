@@ -1,14 +1,45 @@
-const { Router, Route, hashHistory } = require('react-router')
 const h = require('react-hyperscript')
-const Home = require('./components/home')
-const Moviedb = require('./components/moviedb')
-const Spotify = require('./components/spotify')
-const Youtube = require('./components/youtube')
+
+const {
+  Router,
+  Route,
+  hashHistory
+} = require('react-router')
+const {
+  Landing,
+  Learn,
+  Cats,
+  Moviedb,
+  Spotify,
+  Youtube
+} = require('./components')
 
 module.exports = _ =>
-  h(Router, { history: hashHistory }, [
-    h(Route, { path: '/', component: Home}),
-    h(Route, { path: '/moviedb', component: Moviedb}),
-    h(Route, { path: '/spotify', component: Spotify}),
-    h(Route, { path: '/youtube', component: Youtube})
+  h(Router, {
+    history: hashHistory
+  }, [
+    h(Route, {
+      path: '/',
+      component: Landing
+    }),
+    h(Route, {
+      path: '/cats',
+      component: Cats
+    }),
+    h(Route, {
+      path: '/moviedb',
+      component: Moviedb
+    }),
+    h(Route, {
+      path: '/spotify',
+      component: Spotify
+    }),
+    h(Route, {
+      path: '/youtube',
+      component: Youtube
+    }),
+    h(Route, {
+      path: '/learn',
+      component: Learn
+    })
   ])
